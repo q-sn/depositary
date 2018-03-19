@@ -1,0 +1,56 @@
+<nav>
+  <button mat-raised-button routerLink="/person" color="primary">Вернуться к добавлению клиента</button>
+</nav>
+
+<div class="table">
+  <mat-table #table [dataSource]="dataSource">
+      
+    <ng-container matColumnDef="_id">
+      <mat-header-cell *matHeaderCellDef> Идентификатор клиента </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element._id}} </mat-cell>
+    </ng-container>  
+      
+    <ng-container matColumnDef="companyName">
+      <mat-header-cell *matHeaderCellDef> Название компании </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.companyName}} </mat-cell>
+    </ng-container>
+    
+    <ng-container matColumnDef="legalAddress">
+      <mat-header-cell *matHeaderCellDef> Юридический адрес </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.legalAddress}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="mailAddress">
+      <mat-header-cell *matHeaderCellDef> Почтовый адрес </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.mailAddress}} </mat-cell>
+    </ng-container>
+    
+    <ng-container matColumnDef="phoneNumber">
+      <mat-header-cell *matHeaderCellDef> Номер мобильного телефона </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.phoneNumber}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="inn">
+      <mat-header-cell *matHeaderCellDef> ИНН </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.inn}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="paymentAccount">
+      <mat-header-cell *matHeaderCellDef> Расчетный счет </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.paymentAccount}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="bik">
+      <mat-header-cell *matHeaderCellDef> БИК </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.bik}} </mat-cell>
+    </ng-container>
+    
+    <ng-container matColumnDef="addedAt">
+      <mat-header-cell *matHeaderCellDef> Дата добавления </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.addedAt}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

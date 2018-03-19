@@ -1,0 +1,47 @@
+<nav>
+  <button mat-raised-button routerLink="/bid-show">Посмотреть все заявки</button>
+</nav>
+<div class="form-container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="form-full-width">
+      <mat-select placeholder="Тип ценной бумаги" formControlName="paperType" required>
+        <mat-option *ngFor="let paperType of paperTypes" [value]="paperType.value">
+          {{ paperType.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field class="form-full-width">
+      <input matInput placeholder="Стоимость ценной бумаги" formControlName="paperCost" required>
+    </mat-form-field>
+    
+    <mat-form-field class="form-full-width">
+      <input matInput placeholder="Процент за хранение" formControlName="persentByStorage" required>
+    </mat-form-field>
+    
+    <mat-form-field class="form-full-width">
+      <input matInput placeholder="Минимальная стоимость хранения" formControlName="minCostByStorage" required>
+    </mat-form-field>
+  
+    <mat-form-field class="form-full-width">
+      <mat-select placeholder="Юр. лицо" formControlName="personId" required>
+        <mat-option *ngFor="let person of persons" [value]="person._id">
+          {{ person.companyName }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field class="form-full-width">
+      <mat-select placeholder="Счет депо" formControlName="custodyId">
+        <mat-option *ngFor="let custody of custodys" [value]="custody._id">
+          {{ custody._id }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <!--<button mat-raised-button type="submit" [ngClass]="{'button-accept' : isAdded}"-->
+    <!--[disabled]="!(!form.invalid && addButtonStatus)">{{ addButtonText }}</button>-->
+    <button mat-raised-button type="submit"
+    [disabled]="!(!form.invalid && addButtonStatus)">{{ addButtonText }}</button>
+  </form>
+</div>
