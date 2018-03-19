@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { Router } from '@angular/router';
 import { BidService } from '../../services/bid.service';
 import { MatTableDataSource } from '@angular/material';
 import  jsdocx  from 'jsdocx';
+=======
+import { BidService } from '../../services/bid.service';
+>>>>>>> 03267357cf19a3d03f9f6b49b40f6b6ba98a4c8d
 
 @Component({
   selector: 'app-show-bid',
@@ -10,6 +14,7 @@ import  jsdocx  from 'jsdocx';
   styleUrls: ['./show-bid.component.css']
 })
 export class ShowBidComponent implements OnInit {
+<<<<<<< HEAD
   displayedColumns = ['personId', '_id', 'addedAt', 'paperType', 'paperCost', 'persentByStorage', 'minCostByStorage', 'PDF'];
   dataSource: any;
 
@@ -31,5 +36,17 @@ export class ShowBidComponent implements OnInit {
     this.dataSource.filter = filterValue;
     console.log(this.dataSource);
   }
+=======
+  displayedColumns = ['personId', '_id', 'addedAt', 'paperType', 'paperCost', 'persentByStorage', 'minCostByStorage'];
+  dataSource: any;
+
+  constructor(private bidService: BidService) { }
+
+  ngOnInit() {
+    this.bidService.getBids().subscribe((res: any[]) => {
+      this.dataSource = res.reverse();
+    })
+  }
+>>>>>>> 03267357cf19a3d03f9f6b49b40f6b6ba98a4c8d
 
 }

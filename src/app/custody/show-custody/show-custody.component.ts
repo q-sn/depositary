@@ -13,7 +13,11 @@ export class ShowCustodyComponent implements OnInit {
   constructor(private custodyService: CustodyService) { }
 
   ngOnInit() {
+<<<<<<< HEAD
     this.custodyService.getCustodys().subscribe(res => {
+=======
+    this.custodyService.getCustodys().subscribe((res: any[]) => {
+>>>>>>> 03267357cf19a3d03f9f6b49b40f6b6ba98a4c8d
       this.dataSource = res.reverse();
     })
   }

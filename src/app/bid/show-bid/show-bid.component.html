@@ -2,6 +2,7 @@
   <button mat-raised-button routerLink="/bid" color="primary">Вернуться на добавление заявки</button>
 </nav>
 
+<<<<<<< HEAD
 
 <div class="table">
   <div class="filter-header">
@@ -9,6 +10,9 @@
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Фильтр">
     </mat-form-field>
   </div>
+=======
+<div class="table">
+>>>>>>> 03267357cf19a3d03f9f6b49b40f6b6ba98a4c8d
   <mat-table #table [dataSource]="dataSource">
       
     <ng-container matColumnDef="personId">
@@ -45,6 +49,7 @@
       <mat-header-cell *matHeaderCellDef> Минимальаня стоимость хранения </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.minCostByStorage}} </mat-cell>
     </ng-container>
+<<<<<<< HEAD
     
     <ng-container matColumnDef="PDF">
       <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
@@ -53,6 +58,9 @@
       </mat-cell>
     </ng-container>
     
+=======
+
+>>>>>>> 03267357cf19a3d03f9f6b49b40f6b6ba98a4c8d
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   </mat-table>

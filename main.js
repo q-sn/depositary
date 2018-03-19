@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const electron = require('electron')
 // Module to control application life.
 const app = electron.app
@@ -14,13 +15,35 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 800, height: 600})
+=======
+const electron = require('electron');
+// Module to control application life.
+const app = electron.app;
+// Module to create native browser window.
+const BrowserWindow = electron.BrowserWindow;
+
+const path = require('path');
+const url = require('url');
+
+// Keep a global reference of the window object, if you don't, the window will
+// be closed automatically when the JavaScript object is garbage collected.
+let mainWindow;
+
+function createWindow () {
+  // Create the browser window.
+  mainWindow = new BrowserWindow({width: 800, height: 600});
+>>>>>>> 03267357cf19a3d03f9f6b49b40f6b6ba98a4c8d
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'dist/index.html'),
     protocol: 'file:',
     slashes: true
+<<<<<<< HEAD
   }))
+=======
+  }));
+>>>>>>> 03267357cf19a3d03f9f6b49b40f6b6ba98a4c8d
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
@@ -37,7 +60,11 @@ function createWindow () {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
+<<<<<<< HEAD
 app.on('ready', createWindow)
+=======
+app.on('ready', createWindow);
+>>>>>>> 03267357cf19a3d03f9f6b49b40f6b6ba98a4c8d
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
@@ -46,7 +73,11 @@ app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') {
     app.quit()
   }
+<<<<<<< HEAD
 })
+=======
+});
+>>>>>>> 03267357cf19a3d03f9f6b49b40f6b6ba98a4c8d
 
 app.on('activate', function () {
   // On OS X it's common to re-create a window in the app when the
@@ -54,4 +85,8 @@ app.on('activate', function () {
   if (mainWindow === null) {
     createWindow()
   }
+<<<<<<< HEAD
 })
+=======
+});
+>>>>>>> 03267357cf19a3d03f9f6b49b40f6b6ba98a4c8d
