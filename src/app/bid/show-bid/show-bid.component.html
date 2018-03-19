@@ -1,0 +1,46 @@
+<nav>
+  <button mat-raised-button routerLink="/bid" color="primary">Вернуться на добавление заявки</button>
+</nav>
+
+<div class="table">
+  <mat-table #table [dataSource]="dataSource">
+      
+    <ng-container matColumnDef="personId">
+      <mat-header-cell *matHeaderCellDef> Идентификатор клиента </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.personId}} </mat-cell>
+    </ng-container>  
+      
+    <ng-container matColumnDef="_id">
+      <mat-header-cell *matHeaderCellDef> Идентификатор заявки </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element._id}} </mat-cell>
+    </ng-container>
+    
+    <ng-container matColumnDef="addedAt">
+      <mat-header-cell *matHeaderCellDef> Дата заявки </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.addedAt}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="paperType">
+      <mat-header-cell *matHeaderCellDef> Тип ценной бумаги </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.paperType}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="paperCost">
+      <mat-header-cell *matHeaderCellDef> Стоимость ценной бумаги </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.paperCost}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="persentByStorage">
+      <mat-header-cell *matHeaderCellDef> Процент за хранение </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.persentByStorage}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="minCostByStorage">
+      <mat-header-cell *matHeaderCellDef> Минимальаня стоимость хранения </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.minCostByStorage}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

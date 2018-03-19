@@ -1,0 +1,35 @@
+<nav>
+  <button mat-raised-button routerLink="/custody-show">Посмотреть список депо счетов</button>
+</nav>
+<div class="form-container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="form-full-width">
+      <mat-select placeholder="Клиент" formControlName="personId" required>
+        <mat-option *ngFor="let person of persons" [value]="person._id">
+          {{ person.companyName }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field class="form-full-width">
+      <mat-select placeholder="Тип ценной бумаги" formControlName="paperName" required>
+        <mat-option *ngFor="let paperType of paperTypes" [value]="paperType.value">
+          {{ paperType.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+      
+    <mat-form-field class="form-full-width">
+      <input formControlName="registrationNumber" matInput placeholder="Регистрационный номер" required>
+    </mat-form-field>
+    
+    <mat-form-field class="form-full-width">
+      <input formControlName="quantity" matInput placeholder="Количество" required>
+    </mat-form-field>
+    
+    <!--<button mat-raised-button type="submit" [ngClass]="{'button-accept' : isAdded}"-->
+    <!--[disabled]="!(!form.invalid && addButtonStatus)">{{ addButtonText }}</button>-->
+    <button mat-raised-button type="submit"
+    [disabled]="!(!form.invalid && addButtonStatus)">{{ addButtonText }}</button>
+  </form>
+</div>
