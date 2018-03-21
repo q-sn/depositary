@@ -14,15 +14,9 @@ export class CustodyComponent implements OnInit {
   addButtonStatus: boolean = true;
   isAdded: boolean = false;
   addButtonText: string = 'Добавить';
-<<<<<<< HEAD
   
   persons: any;
   
-=======
-
-  persons: any;
-
->>>>>>> 03267357cf19a3d03f9f6b49b40f6b6ba98a4c8d
   paperTypes = [
     {value: 'вексель', viewValue: 'Вексель'},
     {value: 'облигация', viewValue: 'Облигация'},
@@ -40,21 +34,12 @@ export class CustodyComponent implements OnInit {
       'quantity': new FormControl(null),
       'personId': new FormControl(null, [Validators.required])
     });
-<<<<<<< HEAD
-    
-    this.personService.getPersons().subscribe(res => {
-      this.persons = res.reverse();
-    })
-  }
-  
-=======
 
     this.personService.getPersons().subscribe((res: any[]) => {
       this.persons = res.reverse();
     })
   }
 
->>>>>>> 03267357cf19a3d03f9f6b49b40f6b6ba98a4c8d
   onSubmit() {
     const formData = this.form.value;
     this.addButtonText = 'Обработка...';
@@ -65,11 +50,7 @@ export class CustodyComponent implements OnInit {
         this.addButtonText = 'Добавлено';
         this.addButtonStatus = true;
         this.isAdded = true;
-<<<<<<< HEAD
         
-=======
-
->>>>>>> 03267357cf19a3d03f9f6b49b40f6b6ba98a4c8d
         this.resetForm(this.form);
       });
   }

@@ -17,17 +17,10 @@ export class BidComponent implements OnInit {
     {value: 'закладная', viewValue: 'Закладная'},
     {value: 'коносамент', viewValue: 'Коносамент'}
   ];
-<<<<<<< HEAD
   
   persons: any;
   custodys: any;
   
-=======
-
-  persons: any;
-  custodys: any;
-
->>>>>>> 03267357cf19a3d03f9f6b49b40f6b6ba98a4c8d
   form: FormGroup;
   addButtonStatus: boolean = true;
   isAdded: boolean = false;
@@ -44,7 +37,6 @@ export class BidComponent implements OnInit {
       'personId': new FormControl(null, [Validators.required]),
       'custodyId': new FormControl(null)
     });
-<<<<<<< HEAD
     
     this.personService.getPersons().subscribe((res: any[]) => {
       this.persons = res.reverse();
@@ -55,18 +47,6 @@ export class BidComponent implements OnInit {
     })
   }
   
-=======
-
-    this.personService.getPersons().subscribe((res: any[]) => {
-      this.persons = res.reverse();
-    })
-
-    this.custodyService.getCustodys().subscribe((res: any[]) => {
-      this.custodys = res.reverse();
-    })
-  }
-
->>>>>>> 03267357cf19a3d03f9f6b49b40f6b6ba98a4c8d
   onSubmit() {
     const formData = this.form.value;
     this.addButtonText = 'Обработка...';
@@ -77,19 +57,11 @@ export class BidComponent implements OnInit {
         this.addButtonText = 'Добавлено';
         this.addButtonStatus = true;
         this.isAdded = true;
-<<<<<<< HEAD
         
         this.resetForm(this.form);
       });
   }
   
-=======
-
-        this.resetForm(this.form);
-      });
-  }
-
->>>>>>> 03267357cf19a3d03f9f6b49b40f6b6ba98a4c8d
   resetForm(formGroup: FormGroup) {
     let control = null;
     formGroup.reset();

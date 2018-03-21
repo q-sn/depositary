@@ -10,13 +10,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-<<<<<<< HEAD
-    "electron": "ng build && electron . ",
-    "electron-aot": "ng build --prod && electron . "
-=======
     "electron": "ng build && electron .",
     "electron-prod": "ng build --prod && electron ."
->>>>>>> 03267357cf19a3d03f9f6b49b40f6b6ba98a4c8d
   },
   "private": true,
   "dependencies": {
