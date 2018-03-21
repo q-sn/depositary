@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BidService } from '../../services/bid.service';
 import { MatTableDataSource } from '@angular/material';
-import  jsdocx  from 'jsdocx';
 
 @Component({
   selector: 'app-show-bid',
@@ -18,13 +17,13 @@ export class ShowBidComponent implements OnInit {
   ngOnInit() {
     this.bidService.getBids().subscribe((res: any[]) => {
       this.dataSource = new MatTableDataSource(res.reverse());
-    })
+    });
   }
-  
+
   getWordFile(bidId) {
     window.location.href = 'https://aminov-slivinskiy.c9users.io:8080/word/' + bidId;
   }
-  
+
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
